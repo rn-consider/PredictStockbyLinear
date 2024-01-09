@@ -7,10 +7,10 @@ import sys
 sys.path.insert(0, sys.path[0]+"/../")
 from data.Ashare import *
 # 导入数据
-data=get_price('600519.XSHG',frequency='15m',count=100)  # 贵州茅台15m线实时行情，total 100' 
+data=get_price('sh600519',frequency='15m',count=100)  # 贵州茅台15m线实时行情，total 100' 
 used_features = ["high", "low", "open", "volume"]
 X = data[used_features]
-y = data[""]
+y = data["close"]
 
 # 从数据集中取30%作为测试集，其他作为训练集
 X_train, X_test, y_train, y_test = train_test_split(
